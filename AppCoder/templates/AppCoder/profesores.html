@@ -1,0 +1,35 @@
+{% extends 'AppCoder/base.html' %}
+
+{% load static %}
+
+{% block title %} Inicio {% endblock title %}
+
+{% block main %}
+    <!-- Content section 1-->
+
+    <form action="/AppCoder/profesores/" method="post">
+        {% csrf_token %}
+        <p> Nombre: <input type = "text" name="nombre">
+        <p> Email: <input type = "email" name="email">
+        <p> Apellido: <input type = "text" name="apellido">
+
+        <input type = "submit" value="Enviar">
+    </form> 
+
+    <section id="scroll">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="p-5"><img class="img-fluid rounded-circle" src="{% static 'AppCoder/assets/img/01.jpg' %}" alt="..." /></div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-5">
+                        <h2 class="display-4">Solo los profes facheros pueden leer esto</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock main %}
+
+
